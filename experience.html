@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Experience - Clarice Tan - Digital Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Clarice Tan Professional Experience" />
+    <meta name="author" content="Clarice Tan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CSS STYLES -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1d3a 50%, #2d3561 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f9cf9;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #4f9cf9;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+            padding: 60px 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #4f9cf9, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .job-card {
+            background: rgba(79, 156, 249, 0.1);
+            border: 1px solid rgba(79, 156, 249, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+
+        .job-title {
+            font-size: 1.8rem;
+            color: #4f9cf9;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .company {
+            font-size: 1.4rem;
+            color: #9d4edd;
+            margin-bottom: 5px;
+        }
+
+        .location {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .period {
+            background: linear-gradient(45deg, #4f9cf9, #9d4edd);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .job-description {
+            margin-bottom: 30px;
+        }
+
+        .job-description p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .achievements {
+            margin-bottom: 30px;
+        }
+
+        .achievements h4 {
+            color: #4f9cf9;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #4f9cf9;
+        }
+
+        .focus {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .focus-tag {
+            background: rgba(157, 78, 221, 0.2);
+            border: 1px solid rgba(157, 78, 221, 0.4);
+            color: #9d4edd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+		
+		/* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(79, 156, 249, 0.3);
+            padding: 40px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #4f9cf9;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section li {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4f9cf9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(79, 156, 249, 0.2);
+            border: 1px solid rgba(79, 156, 249, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4f9cf9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(45deg, #4f9cf9, #9d4edd);
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(79, 156, 249, 0.2);
+            padding-top: 20px;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .job-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Clarice Tan</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT SECTION -->
+    <main>
+        <div class="container">
+            <!-- PAGE HEADER SECTION -->
+            <div class="page-header">
+                <h1>Experience</h1>
+                <p>My professional journey and career highlights</p>
+            </div>
+
+            <!-- EXPERIENCE GRID SECTION -->
+            <div class="experience-grid">                
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Service Crew - Ice Cream Kiosk (Part-Time)</div>
+                            <div class="company">FrostnBites (Jag Scoops)</div>
+                            <div class="location">Sunway Velocity &amp; Pavilion Damansara Height </div>
+                        </div>
+                        <div class="period">November 2023 - present</div>
+                    </div>
+                    
+                    <div class="job-description">
+                        <p>Delivered fast and friendly service, managed customer transactions, and upheld food safety and cleanliness standards.</p>
+                    </div>
+
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Assisted with custom and multi-flavor orders while ensuring speed and quality</li>
+                            <li>Handled cash transactions accurately with zero shortfalls</li>
+                            <li>Collaborated with team members to manage long queues and reduce wait times</li>
+                            <li>Maintained a clean and organized work area at all times</li>
+                        </ul>
+                    </div>
+
+                    <div class="focus">
+                        <span class="focus-tag">Customer Service</span>
+                        <span class="focus-tag">Multitasking</span>
+                        <span class="focus-tag">Cash Handling</span>
+                        <span class="focus-tag">Food Safety & Hygiene</span>
+                        <span class="focus-tag">Team Collaboration</span>
+						<span class="focus-tag">Positive Attitude</span>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Member Card Promoter (Part-Time)</div>
+                            <div class="company">AEON Co.</div>
+                            <div class="location">Taman Equine</div>
+                        </div>
+                        <div class="period">Apr 2023 - Mar 2025</div>
+                    </div>
+                    
+                    <div class="job-description">
+                        <p>Promoted AEON membership cards and assisted with customer sign-ups.</p>
+                    </div>
+
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Reached daily sign-up target consistently</li>
+                            <li>Explained benefits clearly to a wide range of customers</li>
+                            <li>Accurately completed registration forms and customer info</li>
+                            <li>Maintained a friendly and professional attitude under pressure</li>
+                        </ul>
+                    </div>
+
+                    <div class="focus">
+                        <span class="focus-tag">Customer Engagement</span>
+                        <span class="focus-tag">Persuasion Skills</span>
+                        <span class="focus-tag">Positive Attitude</span>
+                        <span class="focus-tag">Data Accuracy</span>
+                        <span class="focus-tag">Multilingual Communication</span>
+                    </div>
+                </div>
+				
+				<div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Event Photographer (Freelance)</div>
+                            <div class="company">Share/Guide Association</div>
+                            <div class="location">Kota Permai Golf &amp; Country Club</div>
+                        </div>
+                        <div class="period">17th Sep 2024</div>
+                    </div>
+                    
+                    <div class="job-description">
+                        <p>Captured moments and group photos at a local golf tournament event as a freelance photographer</p>
+                    </div>
+
+                    <div class="achievements">
+                        <h4>Key Achievements:</h4>
+                        <ul>
+                            <li>Captured over 200 high-quality photos within event hours</li>
+                            <li>Delivered edited photos within 24 hours of the event</li>
+                            <li>Ensured proper framing and lighting in fast-paced conditions</li>
+                            <li>Received positive feedback from both guests and organizers</li>
+                        </ul>
+                    </div>
+
+                    <div class="focus">
+                        <span class="focus-tag">Attention to Detail</span>
+                        <span class="focus-tag">Fast Turnaround</span>
+                        <span class="focus-tag">Time Management</span>
+                        <span class="focus-tag">Client Communication</span>
+                        <span class="focus-tag">Photo Editing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	
+	<!-- FOOTER SECTION -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Clarice Tan</h3>
+                    <p>Creative thinker and New Media Design student exploring the art of digital storytelling through design, photography, and multimedia.</p>                    
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>UI/UX Design</li>
+                        <li>Mobile Development</li>
+                        <li>Consulting</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p> &#128205; Petaling Jaya, Malaysia</p>
+                    <p> &#128222; +60 1163051229</p>
+                    <p> &#128231; ctanlx05@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clarice Tan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
